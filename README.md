@@ -11,7 +11,9 @@ For more information see [BITLY DEV DOCS](https://dev.bitly.com/)
 ## Requirements
 
 Laravel 5.1 or Later
+
 PHP 7.1 or Later
+
 Bitly [Access Token](https://app.bitly.com/settings/api/ "Access Token")
 
 ## Installation
@@ -103,6 +105,7 @@ This Bitly package allow you to use advance bitlink attributes to customize bitl
 > Note: While using attribues you will have to provide `->url()` and `->get()` to retrive short url!
 
 **URL**
+
 You will have to provide long URL to this function which will be used to shorten the url.
 
 ```php
@@ -110,6 +113,7 @@ $url = Bitly::url('http://example.com')->get(); // http://bit.ly/nHcn3
 ```
 
 **TITLE**
+
 Its a short description that appears in the Bitly UI.
 You can now set the title of the URL which you are shortning by passing title in title function
 
@@ -120,6 +124,7 @@ $url = Bitly::url('http://example.com')
 ```
 
 **PROXY**
+
 Proxies can be now passed using proxy function which can be used to build bulk urls with proxies.
 
 > Note: You can provide proxy URLs that contain a scheme, username, and password. For example, "http://username:password@192.168.16.1:10".
@@ -131,6 +136,7 @@ $url = Bitly::url('http://example.com')
 ```
 
 **DOMAIN**
+
 Customizing the domain requires that you have a custom domain attached to your Bitly account. The default value is bit.ly.
 To brand your short links use domain attribute. Premium Bitly customers can set custom domain added in dashboard with `->domain()` . This is only for Premium Bitly Customers
 
@@ -141,6 +147,7 @@ $url = Bitly::url('http://example.com')
 ```
 
 **TAGS**
+
 Set multiple tags with tags attributes. Tags must be provided in array.
 
 ```php
@@ -152,6 +159,7 @@ $url = Bitly::url('http://example.com')
 ```
 
 **GUID**
+
 guid can be used to set your group id. GUID Identifies a group of users in your account. Every user will belong to at least one group within an organization. Most actions on our API will be on behalf of a group. Always verify your default group in Bitly and specify a group in the call with `->guid()` attribute.
 
 ```php
