@@ -1,0 +1,43 @@
+{
+  "name": "kalprajsolutions/bitly",
+  "description": "Laravel package for generating bitly url",
+  "keywords": ["laravel", "bitly", "package", "short", "url", "link"],
+  "license": "MIT",
+  "version": "1.0.0",
+  "authors": [
+    {
+      "name": "Kalpraj Solutions",
+      "email": "support@kalprajsolutions.com"
+    }
+  ],
+  "extra": {
+    "laravel": {
+      "providers": [
+        "KalprajSolutions\\Bitly\\BitlyServiceProvider"
+      ],
+      "aliases": {
+        "Bitly": "KalprajSolutions\\Bitly\\Facade\\Bitly"
+      }
+    }
+  },
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*",
+    "illuminate/support": "^5.8 || ^6.0 || ^7.0 || ^8.0",
+    "guzzlehttp/guzzle": "~6.0 || ^7.0.1 || ^7.1 || ^7.2 || ^7.3"
+  },
+  "require-dev": {
+    "symfony/http-foundation": "^5.0",
+    "phpunit/phpunit": "^8.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "KalprajSolutions\\Bitly\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "KalprajSolutions\\Bitly\\Test\\": "Tests"
+    }
+  }
+}
