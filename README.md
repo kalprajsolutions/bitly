@@ -6,7 +6,9 @@ Bitly is the most widely trusted link management platform in the world. By using
 
 For more information see [BITLY DEV DOCS](https://dev.bitly.com/)
 
-[![Build Status](https://github.com/Shivella/laravel-bitly/actions/workflows/tests.yml/badge.svg?branch=master)](https://github.com/Shivella/laravel-bitly/actions) [![Latest Stable Version](https://poser.pugx.org/shivella/laravel-bitly/v/stable)](https://packagist.org/packages/shivella/laravel-bitly) [![License](https://poser.pugx.org/shivella/laravel-bitly/license)](https://packagist.org/packages/shivella/laravel-bitly) [![Total Downloads](https://poser.pugx.org/shivella/laravel-bitly/downloads)](https://packagist.org/packages/shivella/laravel-bitly)
+[![Latest Stable Version](https://poser.pugx.org/kalprajsolutions/bitly/v/stable)](https://packagist.org/packages/kalprajsolutions/bitly)
+[![License](https://poser.pugx.org/kalprajsolutions/bitly/license)](https://packagist.org/packages/kalprajsolutions/bitly)
+[![Total Downloads](https://poser.pugx.org/kalprajsolutions/bitly/downloads)](https://packagist.org/packages/kalprajsolutions/bitly)
 
 ## Requirements
 
@@ -100,7 +102,7 @@ $url = Bitly::proxy('user:pass@1.1.1.1:80')->short('https://www.example.com/'); 
 
 This Bitly package allow you to use advance bitlink attributes to customize bitly urls and proxies.
 
-#### Guarding attributes
+#### Guarding Attributes
 
 > Note: While using attribues you will have to provide `->url()` and `->get()` to retrive short url!
 
@@ -125,7 +127,7 @@ $url = Bitly::url('http://example.com')
 
 **PROXY**
 
-Proxies can be now passed using proxy function which can be used to build bulk urls with proxies.
+Pass an associative array to specify HTTP proxies for specific URI schemes (i.e., "http", "https"). Provide a no key value pair to provide a list of host names that should not be proxied to.
 
 > Note: You can provide proxy URLs that contain a scheme, username, and password. For example, "http://username:password@192.168.16.1:10".
 
@@ -133,16 +135,17 @@ Proxies can be now passed using proxy function which can be used to build bulk u
 $url = Bitly::url('http://example.com')
 		->proxy('user:pass@1.1.1.1:80')
 		->get();
+
 ```
 
-**DOMAIN**
-
-Customizing the domain requires that you have a custom domain attached to your Bitly account. The default value is bit.ly.
-To brand your short links use domain attribute. Premium Bitly customers can set custom domain added in dashboard with `->domain()` . This is only for Premium Bitly Customers
+OR
 
 ```php
 $url = Bitly::url('http://example.com')
-		->domain('custom.com')
+		->proxy([
+			'http'  => 'http://localhost:8125', // Use this proxy with "http"
+			'https' => 'http://localhost:9124', // Use this proxy with "https"
+		])
 		->get();
 ```
 
@@ -168,26 +171,13 @@ $url = Bitly::url('http://example.com')
 		->get();
 ```
 
-**PROXY**
+**DOMAIN**
 
-Pass an associative array to specify HTTP proxies for specific URI schemes (i.e., "http", "https"). Provide a no key value pair to provide a list of host names that should not be proxied to.
-
-> Note: You can provide proxy URLs that contain a scheme, username, and password. For example, "http://username:password@192.168.16.1:10".
-
-```php
-$url = Bitly::url('http://example.com')
-		->proxy('user:pass@1.1.1.1:80')
-		->get();
-
-```
-
-OR
+Customizing the domain requires that you have a custom domain attached to your Bitly account. The default value is bit.ly.
+To brand your short links use domain attribute. Premium Bitly customers can set custom domain added in dashboard with `->domain()` . This is only for Premium Bitly Customers
 
 ```php
 $url = Bitly::url('http://example.com')
-		->proxy([
-			'http'  => 'http://localhost:8125', // Use this proxy with "http"
-			'https' => 'http://localhost:9124', // Use this proxy with "https"
-		])
+		->domain('custom.com')
 		->get();
 ```
