@@ -129,11 +129,11 @@ $url = Bitly::url('http://example.com')
 
 Pass an associative array to specify HTTP proxies for specific URI schemes (i.e., "http", "https"). Provide a no key value pair to provide a list of host names that should not be proxied to.
 
-> Note: You can provide proxy URLs that contain a scheme, username, and password. For example, "http://username:password@192.168.16.1:10".
+> Note: You can provide proxy URLs that contain a scheme, username, and password. For example, "http://user:pass@localhost:8125".
 
 ```php
 $url = Bitly::url('http://example.com')
-		->proxy('user:pass@1.1.1.1:80')
+		->proxy('user:pass@localhost:8125')
 		->get();
 
 ```
