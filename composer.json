@@ -3,7 +3,7 @@
   "description": "Laravel package for generating bitly url",
   "keywords": ["laravel", "bitly", "package", "short", "url", "link"],
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.2",
   "authors": [
     {
       "name": "Kalpraj Solutions",
